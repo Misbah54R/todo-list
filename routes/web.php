@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpKernel\DependencyInjection\RegisterControllerArgumentLocatorsPass;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/register', function () {
+    return view('auth.register');
+})->name('register');
+
+
+Route::get('/login', function () {
+
+    return view('auth.login');
+
+})->name('loign');
+
+
+Route::post('/register' , 
+    [RegisterController::class, 'register']
+)->name('register.user');  
