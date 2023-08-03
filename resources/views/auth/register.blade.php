@@ -32,6 +32,7 @@
                     <form method="Post" class="space-y-4 md:space-y-6 px-5" action="{{ route('register.user')}}">
                         @csrf 
                         <div>
+                            
                             <label for="email" class="my-2 block ext-sm font-medium text-violet-900">Your email</label>
                             <input type="email" name="email" id="email" class="my-2 w-full border-b border-violet-300  text-violet-900 sm:text-sm font-semibold block" placeholder="name@company.com" required="">
                         </div>
