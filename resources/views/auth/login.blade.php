@@ -34,11 +34,18 @@
     <div class="w-full">
 
         <label for="email" class="mt-2 mb-2 inline-block font-semibold">Your email</label>
-        <x-common.input type="email" name="email" id="email" placeholder="name@company.com" required=""></x-common.input>
+        <x-common.input type="email" name="email" id="email" placeholder="name@company.com" value="{{old('email')}}"></x-common.input>
+    
+        @error('email')
+                <div class="text-sm text-red-700">{{ $message }}</div>
+                @enderror  
+   
     </div>
     <div class="w-full">
         <label for="password" class="mt-2 mb-2 inline-block font-semibold">Password</label>
-        <x-common.input type="password" name="password" id="password" placeholder="••••••••" required=""></x-common.input>
+        <x-common.input type="password" name="password" id="password" placeholder="••••••••" ></x-common.input>
+   
+   
     </div>
    
     

@@ -28,36 +28,57 @@
             @csrf
 
             <h1 class="text-2xl font-bold mb-4 text-center">
-               Register
+                Register
             </h1>
             <div class="w-full">
 
                 <label for="name" class="mb-2 inline-block font-semibold">Name</label>
-                <x-common.input type="text" name="name" id="name" placeholder="Enter Your Name" required=""></x-common.input>
+                <x-common.input type="text" name="name" id="name" placeholder="Your Name" value="{{old('name')}}"></x-common.input>
+               
+           
+                @error('name')
+                <div class="text-sm text-red-700">{{ $message }}</div>
+                @enderror
+                              
+            
             </div>
             <div class="w-full">
 
                 <label for="email" class="mt-2 mb-2 inline-block font-semibold">Your email</label>
-                <x-common.input type="email" name="email" id="email" placeholder="name@company.com" required=""></x-common.input>
+                <x-common.input type="email" name="email" id="email" placeholder="you@cexample.com" value="{{old('email')}}"></x-common.input>
+               
+               
+                @error('email')
+                <div class="text-sm text-red-700">{{ $message }}</div>
+                @enderror  
+
+
             </div>
             <div class="w-full">
                 <label for="password" class="mt-2 mb-2 inline-block font-semibold">Password</label>
-                <x-common.input type="password" name="password" id="password" placeholder="••••••••" required=""></x-common.input>
+                <x-common.input type="password" name="password" id="password" placeholder="••••••••" value="{{old('password')}}"></x-common.input>
+               
+               
+                 @error('password')
+                <div class="text-sm text-red-700">{{ $message }}</div>
+                @enderror 
+
+
             </div>
             <div class="w-full">
-                <label for="confirm-password" class="mt-2 mb-2 inline-block font-semibold">Confirm password</label>
-                <x-common.input type="confirm-password" name="password_confirm" id="confirm-password" placeholder="••••••••" required=""></x-common.input>
+                <label for="password_confirmation" class="mt-2 mb-2 inline-block font-semibold">Confirm password</label>
+                <x-common.input type="password" name="password_confirmation" id="password_confirmation" placeholder="••••••••" required=""></x-common.input>
             </div>
-            <div class="w-full m-1 text-sm" >
-            
-                    <input id="terms" aria-describedby="terms" type="checkbox" required=""></input>
-                
-                
-                    <label for="terms">I accept the <a class="font-medium hover:underline" href="#">Terms and Conditions</a></label>
-                
+            <div class="w-full m-1 text-sm">
+
+                <input id="terms" aria-describedby="terms" type="checkbox" required=""></input>
+
+
+                <label for="terms">I accept the <a class="font-medium hover:underline" href="#">Terms and Conditions</a></label>
+
             </div>
             <div class="w-full">
-            <input type="submit" class="text-white font-medium w-full bg-violet-500 rounded-lg cursor-pointer hover:bg-violet-700 py-3 mt-3">
+                <input type="submit" class="text-white font-medium w-full bg-violet-500 rounded-lg cursor-pointer hover:bg-violet-700 py-3 mt-3">
             </div>
         </form>
 

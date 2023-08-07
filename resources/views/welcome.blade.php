@@ -27,8 +27,8 @@
       <div class="font-bold text-5xl text-violet-900  " > Welcome to Todo Lists. Sign up and get started today. Or login to pickup where you left</div>
 
       <div class="text-center">
-        <a href="{{ route('register') }}" class=" rounded px-4 py-2 rounded-md text-xg text-white bg-violet-700">Sign up</a>
-        <a href="{{ route('login') }}" class=" rounded px-4 py-2 rounded-md text-xg text-white bg-violet-700">Login</a>
+        <a href="{{ route('register') }}" class=" rounded px-4 py-2 text-xg text-white bg-violet-700">Sign up</a>
+        <a href="{{ route('login') }}" class=" rounded px-4 py-2 text-xg text-white bg-violet-700">Login</a>
       </div>
     </div>
 
