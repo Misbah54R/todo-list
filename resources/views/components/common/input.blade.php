@@ -1,0 +1,1 @@
+<input class="w-full p-2 border border-violet-400 rounded-lg focus:outline-0 focus:border-violet-700" , {{$attributes}}>

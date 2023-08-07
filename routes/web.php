@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\DependencyInjection\RegisterControllerArgumentLocatorsPass;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
+use Illuminate\Auth\Events\Login;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +30,13 @@ Route::get('/login', function () {
 
     return view('auth.login');
 
-})->name('loign');
+})->name('login');
 
 
 Route::post('/register' , 
     [RegisterController::class, 'register']
 )->name('register.user');  
+
+Route::post('/login' , 
+    [LoginController::class, 'Login']
+)->name('login.user');  
