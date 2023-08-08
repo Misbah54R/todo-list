@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Routing\Controller;
@@ -16,5 +17,11 @@ class LoginController extends Controller
             'password' => ['required']
         ]);
 
+        if (Auth::attempt($attributes)){
+
+            return redirect()->route('home');
+        }
+               return redirect()->back();
+    
     }
 }

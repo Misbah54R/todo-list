@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\DependencyInjection\RegisterControllerArgumentLocatorsPass;
 use App\Http\Controllers\RegisterController;
@@ -19,7 +20,9 @@ use Illuminate\Auth\Events\Login;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('root');
+
+
 
 Route::get('/register', function () {
     return view('auth.register');
@@ -32,11 +35,17 @@ Route::get('/login', function () {
 
 })->name('login');
 
+Route::post('/login' , 
+    [LoginController::class, 'Login']
+)->name('login.user'); 
+
 
 Route::post('/register' , 
     [RegisterController::class, 'register']
 )->name('register.user');  
 
-Route::post('/login' , 
-    [LoginController::class, 'Login']
-)->name('login.user');  
+
+
+Route::get('/home' , 
+    [HomeController::class, 'home']
+)->name('home');  

@@ -20,7 +20,7 @@
 <body>
 
     <x-common.nav></x-common.nav>
-
+        <x-flash-message />
     <div class=" w-1/3 mx-auto">
 
 
@@ -67,7 +67,7 @@
             </div>
             <div class="w-full">
                 <label for="password_confirmation" class="mt-2 mb-2 inline-block font-semibold">Confirm password</label>
-                <x-common.input type="password" name="password_confirmation" id="password_confirmation" placeholder="••••••••" required=""></x-common.input>
+                <x-common.input type="password" name="password_confirmation" id="password_confirmation" placeholder="••••••••" ></x-common.input>
             </div>
             <div class="w-full m-1 text-sm">
 
