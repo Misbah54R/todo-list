@@ -1,30 +1,11 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Todo list</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    <link href="/public/css/styles.css" rel="stylesheet">
-    @vite('resources/css/output.css')
-    <!-- <link rel="stylesheet" href="{{asset('public/css/styles.css')}}">-->
-    <!-- Styles -->
-
-</head>
-
-<body>
+<x-common.index></x-common.index>
   
         <x-common.nav></x-common.nav>
 
-        <div class=" w-1/3 mx-auto">
+<div class=" w-1/3 mx-auto">
 
 
-<form method="Post" class=" bg-violet-100 rounded-xl mt-24 p-6" action="{{ route('login.user')}}">
+<form method="Post" class=" bg-violet-100 rounded-xl mt-24 p-6" action="{{ route('login.store')}}">
     @csrf
 
     <h1 class="text-2xl font-bold mb-4 text-center">
@@ -60,7 +41,3 @@
 </form>
 
 </div>
-     
-</body>
-
-</html>

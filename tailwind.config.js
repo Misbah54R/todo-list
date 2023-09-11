@@ -2,7 +2,10 @@
 export default {
   content: ["./resources/**/*.js}" , "./resources/**/*.blade.php" , "./resources/**/*.css"],
   theme: {
-    extend: {},
+    'gradient-violet-fuchsia-blue': 'linear-gradient(to right, #9B5DE5, #C83E86, #2870B5)',
+  },
+    extend: {
+    
   },
   plugins: [],
 }

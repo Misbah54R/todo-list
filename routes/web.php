@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('root');
 
+Route::fallback(function(){
+    return view('welcome');
+});
+
 
 
 Route::get('/register', function () {
@@ -33,19 +37,18 @@ Route::get('/login', function () {
 
     return view('auth.login');
 
-})->name('login');
+})->name('login.create');
 
 Route::post('/login' , 
-    [LoginController::class, 'Login']
-)->name('login.user'); 
+    [LoginController::class, 'store']
+)->name('login.store'); 
+
+Route::delete('/login' , 
+    [LoginController::class, 'destroy']
+)->name('login.destroy'); 
+
 
 
 Route::post('/register' , 
     [RegisterController::class, 'register']
 )->name('register.user');  
-
-
-
-Route::get('/home' , 
-    [HomeController::class, 'home']
-)->name('home');  

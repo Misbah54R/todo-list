@@ -23,7 +23,7 @@ class RegisterController extends Controller
 
         try {
             User::create($attributes);
-            return redirect()->route('home');
+            return redirect()->route('root');
         } catch (\Throwable $th) {
            Log::error($th);
            session()->flash('message','Please try again');

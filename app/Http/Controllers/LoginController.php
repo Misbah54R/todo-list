@@ -9,7 +9,7 @@ use Illuminate\Routing\Controller;
 
 class LoginController extends Controller
 {
-     public function login(Request $request)
+     public function store(Request $request)
     {
         $attributes = $request->validate([
            
@@ -19,9 +19,17 @@ class LoginController extends Controller
 
         if (Auth::attempt($attributes)){
 
-            return redirect()->route('home');
+
+            $request->session()->regenerate();
+            return redirect()->route('root');
         }
-               return redirect()->back();
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
     
     }
+     public function destroy(){
+     Auth::logout();
+     return redirect()->back(fallback: true);
+}
 }
